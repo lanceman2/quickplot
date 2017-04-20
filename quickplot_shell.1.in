@@ -1,0 +1,83 @@
+.\" Licensed under version 3 of the GNU General Public License.
+.\" Written by Lance Arsenault
+.TH QUICKPLOT_SHELL 1 "Quickplot Version @VERSION@: @RELEASE_DATE@"
+.SH NAME
+quickplot_shell \- a remote command line shell for quickplot
+.SH SYNOPSIS
+.B "Usage: quickplot_shell [PID]|[-h|--help]|[QUICKPLOT_OPTIONS]"
+.br
+.SH DESCRIPTION
+\fBQuickplot\fR
+is an interactive 2D plotter.  It's primary focus is to
+interactively display 2D plots.  \fBquickplot_shell\fR connects
+to a running Quickplot
+program.
+\fBquickplot_shell\fR provides a command line interface for
+most of the graphical user interfaces that are in the
+Quickplot program.
+\fBquickplot_shell\fR reads and writes to standard input and
+standard output respectively.
+When standard input is a tty device \fBquickplot_shell\fR
+enables readline tab completion and history.
+If you would like to save your Quickplot shell history
+between sessions just create a .quickplot_history in your home
+directory with a command like `touch ~/.quickplot_history'.
+.PP
+If the argument option \fBPID\fR is not given,
+\fBquickplot_shell\fR will launch Quickplot as
+a new process and connect to that new process.  In this case
+Quickplot will be started with \fBQUICKPLOT_OPTIONS\fR
+if any are given.
+.PP
+If \fBPID\fR is given, \fBquickplot_shell\fR will connect
+to a running Quickplot
+program with process ID \fBPID\fR.
+.PP
+\fBquickplot_shell\fR sets up two named pipes, signals the running
+Quickplot program and writes commands and reads responses
+to and from the pipe.  The named pipes will be unlinked as
+soon as they are connected, and hence will be removed automatically
+when the two programs are no longer running.
+.PP
+\fBquickplot_shell\fR, the remote Quickplot shell,
+acts just like running
+\fBquickplot\fR \fB--shell\fR, a local Quickplot shell,
+but \fBquickplot_shell\fR
+runs as a separate process and talks to the Quickplot program
+using pipes, where as \fBquickplot\fR \fB--shell\fR runs one
+process with both the GUI and the shell with no pipes.
+You may connect any number of remote Quickplot shells to a Quickplot
+program.
+.br
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+display help and exit
+.br
+.SH "SEE ALSO"
+.BR quickplot (1)
+.br
+.SH COPYRIGHT
+Copyright (C) 1998-2011  Lance Arsenault
+.PP
+Quickplot is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published
+by the Free Software Foundation, either version 3 of the License,
+or (at your option) any later version.
+.PP
+Quickplot is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+.PP
+You should have received a copy of the GNU General Public License
+along with Quickplot.  If not, see <http://www.gnu.org/licenses/>.
+
+.SH AUTHOR
+.PP
+Lance Arsenault <lanceman@users.sourceforge.net>
+.br
+Send bug reports or comments to the above address.
+.br
+For more information, see the Quickplot homepage at 
+.br
+<@PACKAGE_URL@>.

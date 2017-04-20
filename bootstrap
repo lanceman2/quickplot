@@ -1,0 +1,49 @@
+#! /bin/bash
+
+# Quickplot - an interactive 2D plotter
+#
+# Copyright (C) 1998-2011  Lance Arsenault
+
+# This file is part of Quickplot.
+#
+# Quickplot is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published
+# by the Free Software Foundation, either version 3 of the License,
+# or (at your option) any later version.
+#
+# Quickplot is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with Quickplot.  If not, see <http://www.gnu.org/licenses/>.
+#
+
+#---------------------------------------------------------------------
+#                         WHAT'S THIS FOR
+
+# Run this if you just got this package from Subversion.
+
+# This is run to generate files, configure, Makefile.in and the-like,
+# that are needed to make the files in this directory into something
+# closer to a package for source distribution, packages source
+# tar-ball files.  The files that this starts with commonly come from
+# a Subversion or other file repository.  This uses the GNU Autotools.
+
+#---------------------------------------------------------------------
+
+
+d=$(echo "$0"|sed 's/[^/]*$//')
+[ -z "$d" ] && d='.'
+if [ "$(cd "$d" 2>/dev/null && echo "${PWD}")" != "${PWD}" ]
+then
+    echo "This script ($0) must be executed directly\
+ from the top $0 source directory."
+    exit 1
+fi
+
+# Today bootscrap is easy with autoreconf
+
+autoreconf --force --verbose --install
+

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--
+
+  Quickplot - an interactive 2D plotter
+
+  Copyright (C) 1998-2011  Lance Arsenault
+
+
+  This file is part of Quickplot.
+
+  Quickplot is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published
+  by the Free Software Foundation, either version 3 of the License,
+  or (at your option) any later version.
+
+  Quickplot is distributed in the hope that it will be useful, but
+  WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with Quickplot.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+
+<html lang=en>
+<head>
+<meta charset="UTF-8">
+<title>Quickplot</title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<style><!--
+/* inline the style sheet so it does not get lost */
+@STYLE_CSS@
+li {
+  margin:5px;
+  padding:0px;
+}
+ul {
+  margin:10px;
+  margin-left:14px;
+  padding:0px;
+}
+--></style>
+</head>
+
+<body>
+
+<h1>Quickplot</h1>
+
+
+<table  summary="page layout" style="margin-top:20px;margin-bottom:26px;">
+  <tr>
+  <td style="padding-right:20px;">
+
+  <span style="font-weight:bold; font-size:110%;">Quickplot</span>
+  is a fast interactive 2D
+  plotter with infinite zooming, value picking, pipe and regular file
+  input, with unlimited simultaneous plots displayed per graph.&nbsp;
+  Quickplot is meant for looking at
+  your data quickly and of secondary importance is making static
+  pictures of your data.&nbsp; It's a data viewer, not a plot
+  editor.&nbsp; It reads ASCII text and sound files.&nbsp; It has lots
+  of command line options, making it very shell script friendly.&nbsp;
+  It currently runs on GNU/Linux systems and we hear it works on Mac OS
+  X Darwin.&nbsp;
+
+  
+  </td>
+  <td>
+
+  <a href="@SCREENSHOT_URL@">
+    <img alt="small screen shot" border=0 src="screenshot_small.png">
+  </a>
+
+  </td>
+</tr>
+  <tr>
+    <td style="padding-right:20px;">
+
+  <p>
+  <span style="font-weight:bold; font-size:110%;">Quickplot</span> is <a
+  href="http://www.gnu.org/copyleft/gpl.html">GNU GPL free
+  software</a>.
+  </p>
+
+
+  <ul style="font-weight:bold;">
+    <li><a href="@SCREENSHOT_URL@">Screen Shots</a></li>
+    <li><a
+href="https://sourceforge.net/project/showfiles.php?group_id=82651"
+     >Downloads page</a></li>
+    <li><a
+href="https://sourceforge.net/projects/quickplot/">Sourceforge
+        Project Summary</a></li>
+  </ul>
+
+  </td>
+  <td>
+
+  <p style="padding-top:4px;padding-bottom:4px;">
+  <span style="font-size:110%; font-weight:bold;">Quickplot is hosted by</span>
+  </p>
+
+  <p>
+    <a href="http://sourceforge.net/projects/quickplot"><img
+    style="padding-left:8px;padding-right:8px;padding-top:4px;padding-bottom:4px;"
+    src="http://sourceforge.net/sflogo.php?group_id=82651&amp;type=7"
+    border="0"
+    alt="SourceForge.net Logo" /></a>
+  </p>
+
+  </td>
+  </tr>
+</table>  
+
+
+
+<p>
+To check-out the current source from the <a href="http://github.com">GitHub</a>
+repository run:
+</p>
+
+<pre>
+git clone https://github.com/lanceman2/quickplot
+</pre>
+
+<p>
+This will create a directory named quickplot in the current directory.
+</p>
+
+<h3>News</h3>
+
+<p>
+<span style="font-size: 90%; font-weight:bold;">Jan 03
+2016</span>&nbsp;&nbsp;
+Moved the quickplot repository to <a
+    href="https://github.com/lanceman2/quickplot">GitHub</a>.
+</p>
+
+<p>
+<span style="font-size: 90%; font-weight:bold;">Dec 11
+2011</span>&nbsp;&nbsp;
+A complete re-write was done and there is a new release that
+requires the use of GTK+ version 3, without GTKmm.&nbsp;
+We consider this rewrite, version 0.10.*, much better than
+version 0.8.15 in many ways.&nbsp; See the
+new features list at
+<a href="about.html#features">about.html#features</a>.
+</p>
+
+<p>
+<span style="font-size: 90%; font-weight:bold;">Nov 27
+2013</span>&nbsp;&nbsp;
+Made a new release with some new options and minor bug fixes.
+</p>
+
+
+<div style="margin-bottom:34px;">
+</div>
+
+
+@FOOTER_HTM@
+
+</body>
+</html>
+

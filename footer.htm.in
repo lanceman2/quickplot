@@ -1,0 +1,97 @@
+<!--
+
+  Quickplot - an interactive 2D plotter
+
+  Copyright (C) 1998-2011  Lance Arsenault
+
+
+  This file is part of Quickplot.
+
+  Quickplot is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published
+  by the Free Software Foundation, either version 3 of the License,
+  or (at your option) any later version.
+
+  Quickplot is distributed in the hope that it will be useful, but
+  WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with Quickplot.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+
+<div style="margin-bottom:50px;">
+</div>
+
+  <!--
+
+  We put this index/footer at the bottom of the
+  page because:
+
+    * it's less intrusive than at the top
+    * it tends not to block find search results
+      as much as if it were at the top
+
+  -->
+
+
+<table summary="footer menu"
+    style="width:100%;
+            z-index:10;
+            position:fixed;
+            bottom:0px;
+            padding-top:2px;
+            padding-bottom:2px;
+            left:0px;
+            margin:0px;
+            width:100%;
+            background-image:url('background_ft.png');
+            border-top: solid 3px #7C82B9;
+            ">
+  <tr>
+  
+    <td style="width:5%">
+    </td>
+    <td style="width:35%">
+    </td>
+    <td style="text-align:center;
+            white-space:nowrap;
+            width:20%;
+            height:100%;
+            vertical-align:bottom;
+            font-weight: bold;
+            font-size:80%;
+            text-align:center;
+            background-color:#8E9EDD;
+            border-radius:8px;
+            -moz-border-radius:8px;
+            border: solid 1px #45454F;
+            ">
+
+            @Top@ |
+            @About@ |
+            @Help@
+    </td>
+    <td style="width:35%">
+    </td>
+    <td style="text-align:right;
+             white-space:nowrap;
+             font-size:66%;
+             font-weight:bold;
+             width:5%;
+             margin:4px;
+             vertical-align:middle;
+             background-color:#8289CE;
+             border-radius:8px;
+             -moz-border-radius:8px;
+             ">
+           
+             Quickplot Version @VERSION@
+
+    </td>
+  
+  </tr>
+</table>
+

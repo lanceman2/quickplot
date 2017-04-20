@@ -1,0 +1,83 @@
+#! /bin/bash
+
+# Quickplot - an interactive 2D plotter
+#
+# Copyright (C) 1998-2011  Lance Arsenault
+
+# This file is part of Quickplot.
+#
+# Quickplot is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published
+# by the Free Software Foundation, either version 3 of the License,
+# or (at your option) any later version.
+#
+# Quickplot is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with Quickplot.  If not, see <http://www.gnu.org/licenses/>.
+#
+######################################################################
+
+# This script removes all auto generated file.  If you don't have the
+# tools needed in your PATH to regenerate the auto generated files
+# this script will not do anything, or so it tries.
+# This will not remove any of your extra development cruft files
+# like joes_configure.bash which you may need but will not go in the
+# repository.  Distribution files are not removed either.
+
+scriptdir="$(dirname ${BASH_SOURCE[0]})"
+cd $scriptdir || exit 1
+
+# This is not a complete list but if they have them
+# they will likely have any others that are needed.
+progs="git lynx convert autoconf automake sed grep awk bash diff"
+inst=
+for prog in $progs ; do
+    if ! which $prog &> /dev/null ; then
+       echo " $prog is not installed in your PATH"
+       inst="$inst $prog"
+    fi
+done
+
+if [ -n "$inst" ] ; then
+    echo
+    echo " You need to have the following installed to run this:"
+    echo
+    echo "    $inst"
+    echo
+    echo " or else you will not be able to recreate the files that"
+    echo " running this removes."
+    exit 1
+fi
+
+###################################################################
+
+set -x
+
+# generated directories
+rm -rf .deps .libs conftest.dir autom4te.cache m4
+
+
+rm -f *.o *.la *.so *.lo
+
+rm -f\
+ aclocal.m4 config.cache config.h install-sh config.log\
+ Makefile Makefile.in missing mkinstalldirs ltmain.sh\
+ config.sub config.guess configure\
+ configure.scan autoscan-*x.log INSTALL\
+ libtool config.status autoscan.log depcomp confdefs.h\
+ last_release
+
+rm -f config.h* stamp-h* compile\
+ quickplot quickplot_shell *.xpm *.txt REPO_VERSION RELEASE_DATE paths.h\
+ *.htm _ScreenShot_*_thumb.png _ScreenShot_*_thumb-*.png\
+ about.html help.html index.html screenshots.html\
+ config.h.in config.h mk_options quickplot.pc\
+ quickplot.1.head quickplot.1.tail quickplot.1 quickplot_shell.1
+
+# generated source files
+rm -f parse_args.h app_op_declare.h app_op_init.h
+

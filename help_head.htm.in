@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<!--
+
+  Quickplot - an interactive 2D plotter
+
+  Copyright (C) 1998-2011  Lance Arsenault
+
+
+  This file is part of Quickplot.
+
+  Quickplot is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published
+  by the Free Software Foundation, either version 3 of the License,
+  or (at your option) any later version.
+
+  Quickplot is distributed in the hope that it will be useful, but
+  WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with Quickplot.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+
+<html lang=en>
+<head>
+<meta charset="UTF-8">
+<title>Quickplot Help</title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<style><!--
+/* We inline the style sheet so it does not get lost */
+@STYLE_CSS@
+
+/* additional style for this particular page */
+h4 {
+  margin-top:18px;
+  margin-bottom:0px;
+  padding-top:2px;
+  padding-bottom:2px;
+}
+table.options {
+  background-color:#7B87D0;
+  margin-left:6px;
+  margin-right:6px;
+  margin-top:15px;
+  margin-bottom:18px;
+  
+  border-top-left-radius:6px;
+  -moz-border-radius-topleft:6px;
+  border-top-right-radius:6px;
+  -moz-border-radius-topright:6px;
+  border-bottom-right-radius:3px;
+  -moz-border-radius-bottomright:3px;
+  border-bottom-left-radius:3px;
+  -moz-border-radius-bottomleft:3px;
+}
+a.opt {
+    color:#46639D;
+    font-style: normal;
+    text-decoration: none;
+}
+table.keys {
+     width: 97%;
+     margin-top:2px;
+     margin-bottom:10px;
+     margin-left:20px;
+     margin-right:10px;
+}
+th.opt {
+    padding-top:8px;
+    padding-bottom:6px;
+    padding-right:0px;
+    padding-left:0px;
+    margin:0px;
+}
+td.opt {
+  padding-left:4px;
+  padding-right:4px;
+  padding-top:4px;
+  padding-bottom:4px;
+}
+tr.a {
+  background-color:#B3CBE4;
+}
+tr.b {
+  background-color:#C4D9EF;
+}
+tr.c {
+  background-color:#B1C7DC;
+}
+--></style>
+</head>
+
+
+<body>
+
+
+<h1>Quickplot Help</h1>
+
+
+<h2>Terminology</h2>
+
+
+<p>
+We need to distinguish between the two terms plot and graph.&nbsp;
+In Quickplot a graph displays one or more plots.&nbsp;
+Quickplot displays each graph in a page tab, like pages in
+a web browser.
+</p>
+
+<p>
+Quickplot can load data from: GUIs (graphical user interfaces), files listed
+on the command line, and from standard input (pipes) too.&nbsp; Data
+is loaded into channels.&nbsp; A channel represents a series of numbers,
+like for example the values for one variable, or a column of numbers in
+a spreadsheet.&nbsp; Other names for channel may be
+dimension, coordinate, degree-of-freedom, field, or component.&nbsp;
+We call them all channels in Quickplot.&nbsp;
+Any two channels may be plotted against each other
+whether they are from the same file or not.&nbsp; 
+A plot is a graphically representation of two channels, call them the X and Y
+channels.&nbsp;
+Any number of plots may be made on a graph.&nbsp;
+The graph is like the paper we put the plots on.
+</p>
+
+
+<h2>Zooming</h2>
+
+
+<ul>
+
+<li>
+<p>
+<b>Grab Zooming</b> &nbsp;&nbsp; Put the pointer (mouse) in the graph
+window.&nbsp; Press the left mouse button and hold
+it while dragging the graph by moving the pointer.&nbsp; Release the left
+mouse button and the graph will stop moving with the pointer.
+</p>
+</li>
+
+
+<li>
+<p>
+<b>Zooming In</b>&nbsp;&nbsp; Put the pointer (mouse) on a corner of a
+graph region you want to zoom to.&nbsp; Press the right mouse button
+and hold and drag the zoom box.&nbsp; Release the
+right mouse button then it is at another corner of the zoom
+region.&nbsp; Now Quickplot will zoom into that zoom region.&nbsp; You
+can zoom in as many times as you like.
+</p>
+
+<p>
+While holding the left mouse button
+you can press the shift key or the control key while
+pulling the zoom box to "shift" or "resize about the center"
+respectively.
+</p>
+
+<p>
+You can zoom to a view of smaller plots by just pressing and
+releasing the right mouse button, without moving the pointer.&nbsp;
+Do it again and the plots get even smaller.&nbsp;
+You can do this any number of times.
+</p>
+
+</li>
+
+
+<li>
+
+<p>
+<b>Zooming Out</b> &nbsp;&nbsp; Put the pointer (mouse) in the graph
+window.&nbsp; Press the right mouse button and hold and drag the zoom
+box.&nbsp; Release the right mouse button then it (the zoom box) is
+past one edge of the graph window.&nbsp; Now Quickplot will zoom out to
+the previous zoom level.&nbsp; Pressing the z key will do the same thing.
+</p>
+
+<p> Or to zoom out to a full view (top zoom level) of the graph: put
+the pointer (mouse) in the graph window.&nbsp; Press the right mouse
+button and hold and drag the zoom box.&nbsp; Release the right mouse
+button then the zoom box is past two edges (a corner) of the graph
+window.&nbsp; Now Quickplot will zoom out to the top zoom level (no
+zoom).&nbsp; Pressing Z (shift-z) will do the same thing.
+</p>
+</li>
+
+
+
+</ul>
+
+
+
+<h2>Graph Value Picking</h2>
+
+
+
+<p>
+First open the Graph Details window by typing 'g', by using the
+View menu, or by clicking the Graph Details button on the button bar.&nbsp;
+Then select the "Plots List and Values" tab.&nbsp;
+The middle mouse button is used for picking and
+displaying X and Y values from the graph.&nbsp; Just try it and see.
+</p>
+
+<p> There are three modes of number display value picking, which may
+be selected on the top of the "Plots List and Values" page (tab):
+</p>
+
+<ul>
+
+<li><b>Pointer Values</b>&nbsp;&nbsp; shows values where the mouse
+pointer is in the scale of the respective plot</li>
+
+<li><b>Interpolate Plot Values</b>&nbsp;&nbsp; shows values where the
+X position of the mouse pointer is with the Y value displayed being a
+linearly interpolated value.&nbsp;
+This requires that all plots be functions of one particular channel.</li>
+
+<li><b>Pick Plot Point Values</b>&nbsp;&nbsp; shows X and Y plot point
+positions that are closest to mouse pointer X position.&nbsp;
+This also requires that all plots be functions of one particular channel.
+</li>
+
+</ul>
+
+<p>
+For the "Pointer Values" and "Interpolate Plot Values" modes the
+number of significant digits displayed will vary with the value change
+per pixel.&nbsp;
+So you will not see digits that are not representative of the
+mouse position.&nbsp;
+Zooming will change the number of significant digits displayed.
+</p>
+
+
+
+<h2>Loadable File Formats</h2>
+
+<p>
+Quickplot can read ASCII text and sound files:
+</p>
+
+
+<h4>ASCII text</h4>
+<p>
+Quickplot can load ASCII text (plan
+text) files.&nbsp; The number of values on each line need not be the same,
+but any missing values will be filled with NAN.&nbsp; 
+Any number of non-number characters other than a new
+line character may used to separate numbers on a given line.&nbsp;
+NAN, INF, -NAN, -INF, +NAN, and +INF (lower case too) are numbers that
+can be read by quickplot.&nbsp;
+Any line starting with zero or more white space characters
+and then any one of &nbsp;<span
+  style="background-color:#AABBCC;">&nbsp; ! " # $ % &amp; ' ( ) /
+  &lt; = &gt; ? @ C c &nbsp;</span>&nbsp; is a comment line that
+is ignored.&nbsp;
+Any lines with no numbers that can be read will be ignored.&nbsp;
+If you wish to have a break in a
+plot line put a NAN (stands for not-a-number) in the channel
+(column) at the point
+(or non-point) where you wish to put the break at.
+</p>
+
+
+<table class="keys" summary="graph example">
+<tr>
+  <td>
+
+<p>
+The interpretation of text as numbers depends on the standard C
+libraries strtod() function which is locale dependent.
+Example (from a typical USA locale):
+</p>
+<table summary="example data">
+<tr><td class=num>1e2 </td>  <td class=num> 0 </td>   <td class=num> -1</td></tr>
+<tr><td class=num>2.1e2 </td>  <td class=num> 1</td>   <td class=num> 0 </td></tr>
+<tr><td class=num>3e2 </td>  <td class=num> NAN</td>   <td class=num> 1</td></tr>
+<tr><td class=num>4.01e2 </td>  <td class=num> 1</td>   <td class=num> 2</td></tr>
+<tr><td class=num>5e2 </td>  <td class=num> 0.87</td>   <td class=num> 3</td></tr>
+<tr><td class=num>6.1e2 </td>  <td class=num> -0.65</td>   <td class=num> 3.2</td></tr>
+<tr><td class=num>7e2</td>   <td class=num> 1 </td>  <td class=num> 3</td></tr>
+<tr><td class=num>5.4e2 </td>  <td class=num> 0.7</td>   <td class=num> 2</td></tr>
+</table>
+
+  </td>
+  <td style="vertical-align:bottom;" rowspan="2">
+    <table summary="graph example">
+      <tr>
+        <td style="text-align:center;">
+    <img
+    alt="example plot" src="sample_plot.png">
+      </td>
+      </tr>
+      <tr>
+        <td>
+          Graph with two plots: column 1 versus column 0 and column 2 versus column
+          0.&nbsp;
+          Note that when Quickplot plots a point with a x or y value of NAN (or INF)
+          the point is skipped and there is not a connecting line to the
+          adjacent points.
+          </td>
+      </tr>
+    </table>
+ </td>
+</tr>
+<tr>
+  <td>
+
+<p>
+In Austria (locale) it may look like:
+</p>
+<table summary="example data">
+<tr><td class=num>1e2 </td>  <td class=num> 0 </td>   <td class=num> -1</td></tr>
+<tr><td class=num>2,1e2 </td>  <td class=num> 1</td>   <td class=num> 0 </td></tr>
+<tr><td class=num>3e2 </td>  <td class=num> NAN</td>   <td class=num> 1</td></tr>
+<tr><td class=num>4,01e2 </td>  <td class=num> 1</td>   <td class=num> 2</td></tr>
+<tr><td class=num>5e2 </td>  <td class=num> 0,87</td>   <td class=num> 3</td></tr>
+<tr><td class=num>6,1e2 </td>  <td class=num> -0,65</td>   <td class=num> 3,2</td></tr>
+<tr><td class=num>7e2</td>   <td class=num> 1 </td>  <td class=num> 3</td></tr>
+<tr><td class=num>5,4e2 </td>  <td class=num> 0,7</td>   <td class=num> 2</td></tr>
+</table>
+
+
+  </td>
+</tr>
+</table>
+
+
+<p>
+The above example has three channels and eight samples (set of values) for each
+channel.&nbsp; A file may have any counting number of channels, that's
+1,2,3,4 or more channels.
+</p>
+
+
+<a name="house"></a>
+<p>
+With the use of NAN, as a kind of plot line terminator,
+you can use Quickplot to draw figures composed of
+straight line segments.&nbsp;
+Here's a silly example.&nbsp;
+Copy and paste the following command to draw this house:
+</p>
+
+<table summary="drawing example" style="width:100%;">
+  <tr>
+  <td style="text-align:center;vertical-align:middle;
+      margin:0px;padding:0px;">
+      <img alt="picture of house" src="house.png">
+    </td>
+    <td style="margin:0px;padding:0px;padding-left:16px;">
+<pre style="margin-top:0px;margin-bottom:0px;margin-right:0px;">
+echo -e "-10 8 -8 1 -1.5 -6\n-10 -6 -4 1 1.5 -6\n\
+10 -6 -4 5 1.5 3\n10 8 -8 5 -1.5 3\nnan nan -8 1 -1.5 -6\n\
+-13 8 nan nan\n13 8 4 1\n0 20 8 1\n-13 8 8 5\nnan nan 4 5\n\
+nan nan 4 1" | quickplot -P --line-width=2 --no-grid \
+--no-border --cairo-draw -C 'rgba(0,0,0,0)' --no-gui \
+--no-points --geometry 79x87 -F -g "0 1 2 3 4 5"
+</pre>
+    </td>
+      </tr>
+</table>
+
+
+<p>
+Using NAN as a line terminator can be very handy when drawing
+phase plots when you need to avoid connecting points that
+should not be connected and you don't want to make more
+channels (degrees of freedom).&nbsp;
+For phase space plots the NAN can be thought of as a place
+holder where you removed part of the series
+because it is not accessible in the current model sampling.
+</p>
+
+<p>
+If a file is loaded with a single channel
+an additional channel, with the same number of values as the channel in
+the file, will be added before the channel from the file.
+</p>
+
+<p>
+Quickplot can read
+<a href="http://en.wikipedia.org/wiki/Comma-separated_values">CSV</a>
+files.
+</p>
+
+
+
+<h4>libsndfile sound file</h4>
+<p>
+Using the package libsndfile Quickplot can
+read many sound file formats.&nbsp; An incomplete list of readable
+sound file formats includes: Ogg/Vorbis,
+Microsoft WAV, SGI/Apple AIFF/AIFC, and
+Sun/DEC/NeXT AU/SND.&nbsp; See the <a
+href="http://www.mega-nerd.com/libsndfile/">libsndfile home-page</a>
+for a full list of supported sound file formats.</p>
+
+<p>
+When loading a sound file the first channel (sequence) loaded will be
+the time sequence, then each sound channel will follow in separate
+channels.&nbsp;
+
+Quickplot may be a little slow with sound files larger than thirty
+seconds long.&nbsp; Thirty seconds of sound sampled at 44&nbsp;kHz
+with one channel would load 1.32 million data points.
+</p>
+
+
+
+
+<h2>Command Line Options</h2>
+
+
+
+
+<a name=usage_synopses></a>
+<h3>Usage: quickplot [OPTIONS]</h3>
+
+
+
+<p>
+Graphs will be generated for each file loaded, unless options are
+given that tell Quickplot to do otherwise.&nbsp; The default number of
+plots in a graph will be up to @NUMBER_OF_PLOTS@ plots or just the
+number channels in the file minus one if that is less, unless options
+override that.&nbsp; The default initial plots will be of all channels
+except the first channel in the order that the channel was loaded from a
+file plotted against the first channel in the file.&nbsp; A time channel
+will be the first channel generated for all sound files loaded.
+</p>
+
+
+<p>
+The order of argument options matters.&nbsp;
+Options take effect in the order that
+they are given with later options overriding
+earlier ones.&nbsp;
+The options that cause actions like graph "something" must
+come after the option that says to read the file that has
+"something" in it.&nbsp;
+In general, the order of argument options gives
+the order in which things happen as Quickplot starts up.
+</p>
+
+
+<p>
+Short options, like <em>-n20</em>,
+that require a sub-argument, may not be grouped with other short
+options in one argument.&nbsp; For example the argument
+<em>-on20</em>, is not valid, but -oN is a valid argument
+with two options <em>o</em> (<em>--no-points</em>) and
+<em>N</em> (<em>--no-pipe</em>), and <em>-n20</em>
+is a valid option (<em>--number-of-plots=20</em>) that
+sets the default number of plots to 20.
+</p>
+
+
+<p>
+All of the command line options set things that can
+be changed with the Quickplot graphical user interface (GUI).&nbsp;
+For example, if you start with a graph with no lines and just points
+showing, you can click a GUI to add the lines after the program
+starts.&nbsp;
+</p>
+
+
+
+
+<h3>OPTIONS</h3>
+
+
+

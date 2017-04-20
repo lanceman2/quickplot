@@ -1,0 +1,33 @@
+.TH QUICKPLOT 1 "Quickplot Version @VERSION@: @RELEASE_DATE@"
+.SH NAME
+quickplot \- a fast interactive 2D plotter
+.SH SYNOPSIS
+.B "quickplot [OPTIONS]"
+.br
+.SH DESCRIPTION
+.I Quickplot
+is an interactive 2D plotter.  It's primary focus is to
+interactively display 2D plots.
+It can generate PNG image files.
+.I Quickplot
+has a graphical user interface, lots of command line options,
+and a command line shell interface as well.
+.I Quickplot
+can load ASCII text files and many sound file formats using the
+libsndfile library.
+.I Quickplot
+can read standard input as a pipe or regular file.
+.PP
+The full documentation for
+.I Quickplot
+is maintained as a HTML document in a file named help.html.
+You can get the latest version at <@PACKAGE_URL@help.html>.
+The options part in this man page is generated from the
+same source as the options part of the HTML document.
+.PP
+The order of argument options matters.  Options take effect
+in the order that they are given with later options overriding
+earlier ones.  The options that cause actions like graph "something"
+must come after the option that says to read the file that has
+"something" in it.  In general, the order of argument options gives
+the order in which things happen as Quickplot starts up. 

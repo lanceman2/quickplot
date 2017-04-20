@@ -1,0 +1,140 @@
+Fix cursor after going from fullscreen view to regular window view.
+The graph window cursor is the "wait" cursor until you move it.
+
+
+Most of this is done, but we need to leave it so we may check
+it out more carefully.  This is just the authors junk notes.
+
+  Add keep aspect mode:  The x/y aspect stays the same when
+  zooming.   This would be handy for when looking at GIS data.
+
+
+  test all the shell commands  
+
+
+
+  document all the environment variables
+
+
+  Add quickplot_shell --pid=PID program that connects to
+  a pipe to the running quickplot program.
+  
+  
+  fix: quickplot -h ==> "failed to create drawable"
+  Looks like GTK+-3.0 is printing this after I call exit.
+  So I guess it's not really a bug.
+
+
+  Fix gnome plugdev
+
+  Run with dmalloc
+
+  Remove the New Graph Tab button.
+
+  Announce on Freshmeat  freecode.com.
+
+
+  Grid and plot layer positions, i.e. grid on top, grid on bottom, grid between
+  plots.  Plot layering comes from plot order in the -g option.  Should
+  -g "0 1 grid 3 4" put the grid between plot 0 1 and plot 3 4?
+  how about -g "0 1 grid-x 3 4 grid-numbers 0 6" to order the different 
+  parts of the grid?  It's just drawing layers...
+
+
+  Document environment variables in html and man
+
+
+  Make a command line dump option that prints out a
+  command line that would as close as it can reproduce
+  the current graphs and windows.
+
+  Make 'N' put up the Select Channel to Plot tab in the Graph Details.
+
+  Add configure tab that lets you change app default values.
+     - like turning off label reading.
+     - default background
+     - lines on/off
+     - points on/off
+
+  Add per user defaults that can be saved or auto saved
+  in a dot file.
+
+  Ruby bindings...
+
+  Change graph tab name when graph gets it's first plot.
+
+  Add a screenshot gallary to the homepage
+     - link to it on the top page.
+     - thumb nails with command line option
+       and links to:
+        * with data files
+        * or c source file
+        * or Ruby source files
+     - do not include it in the source.
+
+  Add move grid to front option
+
+  Add move plot to front button/function
+
+  Full control of graph colors and fonts:
+   Like:
+    Add x/y line grid color, x/y line number font
+    x/y line number color, and sub grid x/y line
+    colors.
+
+
+  Add another Cairo draw mode that will use sub-pixel values
+  or basically use Cairo the way it was meant to be used.
+  It will be much slower at drawing than the current
+  Quickplot Cairo draw mode, but may make much better
+  static images.  It could make images that are not
+  restricted by the computer display.
+
+  Fix and use plot sig fig in status (may be done)
+
+  add sub-grid
+
+  find/check all the GTK+ argument options
+
+  check the status x y print format when there is no grid
+
+
+  Make function channels that use less memory
+     - linear channel
+     - sine functions and other elementary functions
+
+
+  Add Channel functions like linear, sine, cosine, exp, ln and so on
+    - do using plugins??
+    - plugins that quickplot compiles or Ruby??
+
+  Add other channel data types other than double, like short and int
+  for loading sound files with a smaller buffer.
+
+
+  Add CAIRO X11 macro #ifdef to code to
+  remove X11 specific code on none X11 platforms
+
+
+  add all --no-bla-bla and --bla-bla options that
+  make things consistent
+
+  Test the startup of large data sets plotting more than
+  one graph tab and more than one window.
+
+
+  Add widget that shows and edits all app options.
+
+
+  Add focus grab when waiting for the draw ...
+  or just throw away all events except quit or escape and equivalent.
+
+
+  Add quick culling to the case when values are always decreasing.
+
+
+  Add extern C to port API to C++.
+
+
+  Add option to strip nan and/or inf from channels.  ??
+

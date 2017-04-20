@@ -1,0 +1,36 @@
+This ChangeLog is no longer updated see:
+https://github.com/lanceman2/quickplot for a more information
+
+Tue 26 Nov 2013  Lance Arsenault <lanceman_at_users.sourceforge.net>
+    * Added fixes for Ubuntu Unity
+    * Other minor bug fixes
+
+Wed 16 Nov 2011  Lance Arsenault <lanceman_at_users.sourceforge.net>
+    * complete rewrite initial checkin to SVN server at
+      https://quickplot.svn.sf.net/svnroot/quickplot/trunk
+
+Sun 11 Dec 2011  Lance Arsenault <lanceman_at_users.sourceforge.net>
+    * Released version 0.9.0 the GTK+3, just C, no C++, complete
+      rewrite
+
+Sun 12 Dec 2011  Lance Arsenault <lanceman_at_users.sourceforge.net>
+    * Added a workaround to a bug in
+      libsndfile version 1.0.25 which caused reading of Ogg sound
+      files from pipes to fail due to calling lseek() on a pipe
+    * Released version 0.9.1
+
+Tue 13 Dec 2011  Lance Arsenault <lanceman_at_users.sourceforge.net>
+    * Fixed X11 draw mode bug which happened when there is
+      transparent background with alpha less than 0.01.  Redrawing
+      would not remove the drawing from the draw events before.  So
+      it drew a mess of lines and points from previous zoom levels.
+    * Released version 0.9.2
+
+Sat 17 Dec 2011  Lance Arsenault <lanceman_at_users.sourceforge.net>
+    * Released version 0.9.3
+    * Then fixed memory corruption bug so then
+    * Released version 0.9.4
+
+Sat 18 Dec 2011  Lance Arsenault <lanceman_at_users.sourceforge.net>
+    * Found and fixed pipe reading bug in non-debug builds
+    * Released version 0.9.5

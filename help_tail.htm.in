@@ -1,0 +1,208 @@
+<!--
+
+  Quickplot - an interactive 2D plotter
+
+  Copyright (C) 1998-2011  Lance Arsenault
+
+
+  This file is part of Quickplot.
+
+  Quickplot is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published
+  by the Free Software Foundation, either version 3 of the License,
+  or (at your option) any later version.
+
+  Quickplot is distributed in the hope that it will be useful, but
+  WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with Quickplot.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+
+
+<!-- This file is appended to help.html after the options table.
+     The options table is auto-generated using the code the also
+     generates the options parsing code in Quickplot.  That keeps
+     the docs consistant with the code and vis versa.  This is
+     not like Doxygen or GTK-doc.
+ -->
+
+<p>For example the command
+</p>
+
+<pre>quickplot file0.txt file1.wav file2.csv file3.dat</pre>
+
+<p>
+will make four graphs in four tabs in one main window.
+</p>
+
+<p>The command</p>
+
+<pre>quickplot file0.txt file1.wav file2.csv --new-window file3.dat --no-new-window</pre>
+
+<p>
+will make two windows with two graphs in each window.&nbsp; You see: file1.wav will be
+forced to be graphed when the parser hits the argument file2.csv, and
+file2.csv will be forced to be graphed when the parser hits the
+file3.dat argument, at which time the <span class=code>--new-window</span>
+is in effect which causes a new window to be used for file2.csv.&nbsp;
+file3.dat will be graphed in the same window as file2.csv because the
+<span class=code>--new-window</span> option is not longer in effect
+when file3.dat is forced to be graphed at the end of the command line.
+</p>
+
+
+
+<p>The command</p>
+
+<pre>quickplot load1.txt --no-grid --no-lines load2.txt --lines=y --line-width=9 -F</pre>
+
+<p>
+will make a graph from data in file load1.txt with no connecting lines
+and no grid.&nbsp; It will make a graph from the data in load2.txt
+with lines with width 9 pixels and no grid.&nbsp;
+The main window displayed will not be full screen since the
+<span class=code>-F</span> option was given after the main window
+would have been created.&nbsp;
+The two graphs will be in two different tab pages in the one main window.
+</p>
+
+<p>The command</p>
+
+<pre>quickplot --fullscreen --no-gui load1.txt --default-graph --gui --no-buttons --no-fullscreen --geometry=400x400-0+0 --new-window --graph "0 1" --geometry=400x400+0-0 load2.txt --background-color='rgba(140,140,200,0.6)' --cairo-draw</pre>
+
+<p>
+will make main window with a graph in full screen without GUIs, another smaller main window
+with the same plot in the top right corner with GUIs except for the buttons bar,
+and another small main window in the bottom left corner with a default graph of
+the file <span class=code>load2.txt</span> drawn with Cairo with a translucent blueish
+gray background.&nbsp;
+The main windows are made when they have to be, which at the
+<span class=code>--default-graph</span>, <span class=code>--graph "0 1"</span>, and
+at the end of the command line when for the default graph of the file
+<span class=code>load2.txt</span> must be displayed.&nbsp;
+Notice all the graphs are made in a new main window.&nbsp;
+That's because the <span class=code>--new-window</span> flag
+was set and is not unset as it could be with the <span class=code>--no-new-window</span>
+command.
+</p>
+
+<p>The command</p>
+
+<pre>echo -e "graph zoom 2 1 -.5 0\ninput `tty`\n" | quickplot /usr/share/tuxpaint/sounds/areyousure.wav --shell --no-gui --no-pipe</pre>
+
+<p>
+will graph the tuxpaint areyousure.wav file with
+the view zoomed to the right half of the graph.&nbsp;
+If you ran this from a bash (or tcsh) shell with a tty,
+Quickplot program will connect a Quickplot shell
+to the tty and give you an interactive Quickplot
+shell after running the <span class=code>input tty</span>
+command.&nbsp;  The <span class=code>--no-pipe</span>
+option keeps Quickplot from reading the standard
+input as graph data so that it can be read by the Quickplot
+shell.&nbsp;  
+The Quickplot shell will be started after all the command
+line arguments are applied, so the shell command
+<span class=code>graph zoom 2 1 -.5 0</span> is applied
+to the graph that is showing after the all the
+command line arguments are processed.&nbsp;
+Type <span class=code>help</span> at the Quickplot shell
+prompt.&nbsp;
+If you would like Quickplot
+to save your Quickplot shell history between sessions
+just create a <span class=code>.quickplot_history</span>
+in your home directory with a command like
+<span class=code>`touch ~/.quickplot_history'</span>.
+</p>
+
+
+<h3>GTK+ OPTIONS</h3>
+
+
+<p>
+The following GTK+ options are parsed by
+the <a href="http://www.gtk.org/">GTK+</a> APIs (application
+programming interfaces), which Quickplot uses:
+</p>
+
+
+
+
+  <table class="keys"
+summary="list of Quickplot gtk+ options. We got this list from running
+`galeon --help'. Where does GTK+ keep this info?">
+
+  <tr><td><span class=code>--class=CLASS</span></td>       <td> Program class as used by the window manager</td></tr>
+  <tr><td><span class=code>--display=DISPLAY</span></td>   <td> X display to use</td></tr>
+  <tr><td><span class=code>--g-fatal-warnings</span></td>  <td> Make all warnings fatal</td></tr>
+  <tr><td><span class=code>--gdk-debug=FLAGS</span></td>   <td> Gdk debugging flags to set</td></tr>
+  <tr><td><span class=code>--gdk-no-debug=FLAGS</span></td><td> Gdk debugging flags to unset</td></tr>
+  <tr><td><span class=code>--gtk-debug=FLAGS</span></td>   <td> Gtk+ debugging flags to set</td></tr>
+  <tr><td><span class=code>--gtk-module=MODULE</span></td> <td> Load an additional Gtk module</td></tr>
+  <tr><td><span class=code>--gtk-no-debug=FLAGS</span></td><td> Gtk+ debugging flags to unset</td></tr>
+  <tr><td><span class=code>--gxid-host=HOST</span></td>    <td>   </td></tr>
+  <tr><td><span class=code>--gxid-port=PORT</span></td>    <td>   </td></tr>
+  <tr><td><span class=code>--name=NAME</span></td>         <td> Program name as used by the window manager</td></tr>
+<tr><td><span class=code>--screen=SCREEN</span></td>     <td> X screen to use</td></tr>
+<tr><td><span class=code>--sync</span></td>              <td> Make X calls synchronous</td></tr>
+
+</table>
+
+
+
+
+<h2>Keyboard Short-cuts</h2>
+
+
+<p>
+Quickplot has GUIs for all of the following immutable keyboard short-cuts:
+</p>
+
+<table class=keys  summary="list of Quickplot key short-cuts" style="margin-bottom:0px;">
+
+<tr class=c><td><b>a</b></td> <td>show information <b>a</b>bout Quickplot using a web browser</td</tr>
+<tr><td><b>b</b></td> <td>show/hide the <b>b</b>utton bar</td</tr>
+<tr class=c><td><b>c</b></td> <td><b>c</b>opies the current focused main window so long as
+    it is not maximized or in fullscreen</td</tr>
+<tr><td><b>d</b></td> <td><b>d</b>elete the main window.&nbsp; This will not close the last main window.</td</tr>
+<tr class=c><td><b>e</b></td> <td>toggles the visibility of the main window bord<b>e</b>r</td</tr>
+<tr><td><b>f</b></td> <td>toggles <b>f</b>ull screen viewing</td</tr>
+<tr class=c><td><b>g</b></td> <td>show/hide the <b>g</b>raph detail widget</td</tr>
+<tr><td><b>h</b></td> <td>show <b>h</b>elp using a web browser</td</tr>
+<tr class=c><td><b>i</b></td> <td>save a PNG <b>i</b>mage of the graph</td</tr>
+<tr><td><b>m</b></td> <td>show/hide the <b>m</b>enu bar or do nothing if there is a globel menu bar</td</tr>
+<tr class=c><td><b>n</b></td> <td>make a <b>n</b>ew graph</td</tr>
+<tr><td><b>o</b></td> <td><b>o</b>pen a data file</td</tr>
+<tr class=c><td><b>q</b></td> <td><b>q</b>uit</td</tr>
+<tr><td><b>r</b></td> <td>toggles between d<b>r</b>awing with Cai<b>r</b>o and X11</td</tr>
+<tr class=c><td><b>s</b></td> <td>show/hide of the <b>s</b>tatus bar</td</tr>
+<tr><td><b>t</b></td> <td>show/hide of the graph <b>t</b>abs</td</tr>
+<tr class=c><td><b>u</b></td> <td>show/hide of all G<b>U</b>Is</td></tr>
+<tr><td><b>w</b></td> <td>makes a new main <b>w</b>indow</td</tr>
+<tr class=c><td><b>x</b></td><td>toggles the X11 shape e<b>x</b>tension on and off</td</tr>
+<tr><td><b>z</b></td> <td><b>z</b>oom out one level</td</tr>
+<tr class=c><td><b>Z</b></td> <td><b>Z</b>oom out all the way</td</tr>
+</table>
+
+
+<table class="keys" summary="The Rest of Quickplot key short-cuts" style="margin-top:0px;">
+  <tr><td style="white-space:nowrap;"><b>esc</b></td> <td>close the current focused 
+      window.&nbsp; This will not close the last main window.&nbsp;
+      If the current focused window is in full screen this will change
+      it to non-full screen.</td</tr>
+  <tr class=c><td style="white-space:nowrap;"><b>left/right arrow</b></td>
+    <td>the right and left arrow keys cycle though graph tabs when the buttons
+      and tabs are not showing</td</tr>
+</table>
+
+
+
+@FOOTER_HTM@
+
+</body>
+</html>
+
