@@ -1,18 +1,8 @@
 # Quickplot
 
-The Quickplot [home page](http://quickplot.sourceforge.net/) contains the lastest Quickplot
-documentation. This Quickplot documentation page is also part of the Quickplot source.  
-This README file is just a brief introduction to Quickplot.
+Quickplot is an interactive 2D plotter.  You can very quickly swim through data with Quickplot. Quickplot is GPL(v3) free software.
 
-## What is Quickplot?
-
-Quickplot is an interactive 2D plotter.  You can very
-quickly swim through data with Quickplot.
-
-Quickplot is GPL(v3) free software.
-
-The Quickplot source package installs HTML files, man pages
-and text files that document Quickplot.
+This source package contains HTML files, man pages and text files that document Quickplot. The [Quickplot home page](http://quickplot.sourceforge.net/) contains the lastest Quickplot documentation.
 
 ## Building QuickPlot
 
